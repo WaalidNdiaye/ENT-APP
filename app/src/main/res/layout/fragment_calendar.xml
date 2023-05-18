@@ -6,10 +6,12 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".ui.calendar.CalendarFragment">
 
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/topBar"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
@@ -45,15 +47,25 @@ tools:context=".ui.calendar.CalendarFragment">
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/topBar"/>
 
-    <com.islandparadise14.mintable.MinTimeTableView
-        android:id="@+id/MinTimeTableView"
-        android:layout_width="match_parent"
+
+    <ScrollView
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
-        app:isFullWidth="true"
         app:layout_constraintTop_toBottomOf="@+id/default_calendar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"/>
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginBottom="50dp">
+
+        <com.islandparadise14.mintable.MinTimeTableView
+            android:id="@+id/MinTimeTableView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:isFullWidth="true"/>
+
+    </ScrollView>
+
+
 
 
 

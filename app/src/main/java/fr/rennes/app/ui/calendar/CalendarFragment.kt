@@ -14,7 +14,7 @@ import fr.rennes.app.R
 
 class CalendarFragment : Fragment() {
 
-    private val day = arrayOf("Mon", "Tue", "Wen", "Thu", "Fri","Sat")
+    private val day = arrayOf("Mon", "Tue", "Wen", "Thu", "Fri")
     private val scheduleList: ArrayList<ScheduleEntity> = ArrayList()
 
 
@@ -22,7 +22,6 @@ class CalendarFragment : Fragment() {
         fun newInstance() = CalendarFragment()
     }
 
-    private lateinit var viewModel: CalendarViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -49,12 +48,23 @@ class CalendarFragment : Fragment() {
             ScheduleDay.TUESDAY, //ScheduleDay object (MONDAY ~ SUNDAY)
             "8:20", //startTime format: "HH:mm"
             "10:30", //endTime  format: "HH:mm"
-            "#73fcae68", //backgroundColor (optional)
+            "#3D0000", //backgroundColor (optional)
+            "#EBE5E5" //textcolor (optional)
+        )
+        val schedule2 = ScheduleEntity(
+            32, //originId
+            "Database", //scheduleName
+            "IT Building 301", //roomInfo
+            ScheduleDay.TUESDAY, //ScheduleDay object (MONDAY ~ SUNDAY)
+            "11:20", //startTime format: "HH:mm"
+            "18:30", //endTime  format: "HH:mm"
+            "#7289da", //backgroundColor (optional)
             "#000000" //textcolor (optional)
         )
         scheduleList.add(schedule)
+        scheduleList.add(schedule2)
+        table.baseSetting(20,30,40)
         table.initTable(day)
-        table.baseSetting(100,100,50)
         table.updateSchedules(scheduleList)
 
 
