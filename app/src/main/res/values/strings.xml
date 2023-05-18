@@ -8,4 +8,8 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="actualit">Actualité</string>
+    <string name="setting_button">setting button</string>
+    <string name="button_to_add_a_event">button to add a event</string>
+    <string name="add_a_event">add a event</string>
+    <string name="setting">setting</string>
 </resources>
